@@ -1,0 +1,36 @@
+.mainContent__list_item
+    color: #C4C4C4;
+    margin-bottom: 13px
+    position: relative
+    &::before
+        content: ''
+        position: absolute
+        background-image: url('../../../../img/icons/star.svg')
+        width: 14px
+        height: 13px
+        bottom: 14px
+        left: 17px
+    &::after
+        content: ''
+        position: absolute
+        background-image: url('../../../../img/icons/greenArrow.svg')
+        width: 4px
+        height: 11px
+        bottom: 14px
+        left: 47px
+
+
+    .wraper__squaresInCorner
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 12px 12px 13px 63.5px
+        .manufacturer
+            max-width: 43px
+            overflow: hidden
+        .profit span
+            position: relative        
+            color: #00A651;
+            background-color: transparent    
+        .price
+            color: #fff
