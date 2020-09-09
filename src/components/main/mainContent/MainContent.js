@@ -1,66 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import "./mainContent.sass"
 import MainContentListItem from './mainContentItem/MainContentListItem'
+import Context from '../../context'
+
 
 export default function MainContent() {
-    const [models] = useState([
-        {
-            id: 1,
-            release: 'Mar 2019',
-            manufacturer: 'Bitmain',
-            model: 'S9i',
-            hash: '10.5-14.5 th/s',
-            algorithm: 'SHA-256',
-            efficiency: '8.00j/H/s',
-            profit: '$122.88',
-            price: '$137.00 - $217.00',
-        },
-        {
-            id: 2,
-            release: 'Apr 2020',
-            manufacturer: 'YoshidaCorp',
-            model: 'P11',
-            hash: '14.5-19.5 th/s',
-            algorithm: 'BDO-512',
-            efficiency: '24.00j/H/s',
-            profit: '$204.82',
-            price: '$247.00 - $517.00',
-        },
-        {
-            id: 3,
-            release: 'Mar 2019',
-            manufacturer: 'Bitmain',
-            model: 'S9i',
-            hash: '10.5-14.5 th/s',
-            algorithm: 'SHA-256',
-            efficiency: '8.00j/H/s',
-            profit: '$122.88',
-            price: '$137.00 - $217.00',
-        },
-        {
-            id: 4,
-            release: 'Apr 2020',
-            manufacturer: 'YoshidaCorp',
-            model: 'P11',
-            hash: '14.5-19.5 th/s',
-            algorithm: 'BDO-512',
-            efficiency: '24.00j/H/s',
-            profit: '$204.82',
-            price: '$247.00 - $517.00',
-        },
-        {
-            id: 5,
-            release: 'Mar 2019',
-            manufacturer: 'Bitmain',
-            model: 'S9i',
-            hash: '10.5-14.5 th/s',
-            algorithm: 'SHA-256',
-            efficiency: '8.00j/H/s',
-            profit: '$122.88',
-            price: '$137.00 - $217.00',
-        },
-    ])
+    const {models} = useContext(Context)
     return (
+        
         <section className='mainContent'>
             <h2 className='mainContent__title'>ON SALE</h2>
             <div className="mainContent__topLine">
@@ -87,7 +34,6 @@ export default function MainContent() {
                         )
                     })
                 }
-
             </ul>
         </section>
     )

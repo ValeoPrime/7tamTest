@@ -1,10 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import logo from './../../img/Logo.svg'
 import basket from './../../img/icons/basket.svg'
 import './header.sass'
-
+import Context from '../context'
 
 export default function Header() {
+    const context = useContext(Context)
+    console.log(context.basketCount);
     return (
         <header className="header">
             <div className="logo__wrap">
@@ -13,7 +15,7 @@ export default function Header() {
             </div>
             <div className="basket__wrap">
                 <img src={basket} alt="basket" />
-                <span className="basket__count">0</span>
+                <span className="basket__count">{context.basketCount}</span>
             </div>
         </header>
     )
