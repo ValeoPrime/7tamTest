@@ -28,9 +28,9 @@ export default function MainContent() {
             </div>
             <ul className="mainContent__list">
                 {
-                    models.map(item => {
+                    models.map((item, i) => {
                         return (
-                            <MainContentListItem item = {item} key={item.id}/>
+                            <MainContentListItem item = {item} key={i} dataId = {i}/>
                         )
                     })
                 }

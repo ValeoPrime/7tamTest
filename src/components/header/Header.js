@@ -6,7 +6,7 @@ import Context from '../context'
 
 export default function Header() {
     const context = useContext(Context)
-    console.log(context);
+    
     return (
         <header className="header">
             <div className="logo__wrap">

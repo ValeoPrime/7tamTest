@@ -13,7 +13,7 @@ export default function Sorting() {
                 
             {   language[0].sortVariants.map((item, i) => {
                         return (
-                            <SortItem title={item} key={i}/>
+                            <SortItem title={item} id ={i} key={i}/>
                         )
                     })
                 }
