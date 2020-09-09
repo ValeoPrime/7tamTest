@@ -22,7 +22,7 @@ export default function MainContentListItem({item}) {
                 <div className="algoritm">{item.algorithm}</div>
                 <div className="efficiency">{item.efficiency}</div>
                 <div className="profit"><span>{item.profit}</span> / day</div>
-                <div className="price">{item.price}</div>
+                <div className="price">${item.minPrice} - ${item.maxPrice}</div>
                 <span></span>
                 <span></span>
                 <span></span>

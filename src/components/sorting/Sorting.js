@@ -1,30 +1,19 @@
-import React,{useState} from 'react'
+import React,{ useContext} from 'react'
 import './sorting.sass'
 import SortItem from './sortItem/SortItem'
+import Context from '../context'
 
 export default function Sorting() {
-    const [sortCategories] = useState([
-        {
-            id: 1,
-            title: "By Manufacturer"
-        },
-        {
-            id: 2,
-            title: "Minimum price"
-        },
-        {
-            id: 3,
-            title: "Maximum price"
-        },
-    ])
+    const {language} = useContext(Context) 
+
     return (
         <div className='left-sideBar'>
-            <h2 className='left-sideBar__title '>SORT BY</h2>
+            <h2 className='left-sideBar__title '>{language[0].sortBy}</h2>
             <ul className="left-sideBar_list">
                 
-            {   sortCategories.map(item => {
+            {   language[0].sortVariants.map((item, i) => {
                         return (
-                            <SortItem title={item.title} key={item.id}/>
+                            <SortItem title={item} key={i}/>
                         )
                     })
                 }

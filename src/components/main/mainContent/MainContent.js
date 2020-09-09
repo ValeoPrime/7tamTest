@@ -5,11 +5,11 @@ import Context from '../../context'
 
 
 export default function MainContent() {
-    const {models} = useContext(Context)
+    const {models, language} = useContext(Context)
     return (
         
         <section className='mainContent'>
-            <h2 className='mainContent__title'>ON SALE</h2>
+            <h2 className='mainContent__title'>{language[0].onSale}</h2>
             <div className="mainContent__topLine">
                 <div className="wraper__squaresInCorner">
                     <div className="release">Release</div>
