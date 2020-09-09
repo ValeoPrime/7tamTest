@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import "./mainContent.sass"
 import MainContentListItem from './mainContentItem/MainContentListItem'
 import Context from '../../context'
+import Loader from '../loader/Loader'
 
 
 export default function MainContent() {
-    const {models, language} = useContext(Context)
+    const { models, language, loading } = useContext(Context)
     return (
-        
+
         <section className='mainContent'>
             <h2 className='mainContent__title'>{language[0].onSale}</h2>
             <div className="mainContent__topLine">
@@ -27,12 +28,15 @@ export default function MainContent() {
                 </div>
             </div>
             <ul className="mainContent__list">
-                {
+                
+                {   loading ?
+                    <Loader /> :
                     models.map((item, i) => {
                         return (
-                            <MainContentListItem item = {item} key={i} dataId = {i}/>
+                            <MainContentListItem item={item} key={i} dataId={i} />
                         )
                     })
+
                 }
             </ul>
         </section>
