@@ -25,6 +25,7 @@ function App() {
   }])
   const [language, setLanguage] = useState([langArr[0]])
   const [loading, setLoading] = useState(true)
+  const [current, setСurrent] = useState(true)
 
   useEffect(() => {
     fetch('data/models.json', {
@@ -32,24 +33,46 @@ function App() {
         'Content-Type': 'application/json;charset=utf-8'
       },
     })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      setTimeout(() => {
-
-        setModels(data)
-        setLoading(false)
-      }, 3000);
-    });
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setTimeout(() => {
+          setModels(data)
+          setLoading(false)
+        }, 3000);
+      });
   }, [])
 
+  function getSortHandler() {
+    const sortMethods = [
+      (a, b) => a.manufacturer.localeCompare(b.manufacturer),
+      (a, b) => b.manufacturer.localeCompare(a.manufacturer),
+    ];
+
+    return function (data) {
+      if (current) {
+
+        let dat = data.slice().sort(sortMethods[0])
+        setСurrent(false)
+        return dat;
+
+      } else {
+        let dat = data.slice().sort(sortMethods[1])
+        setСurrent(true)
+        return dat;
+
+      }
+    }
+  }
+
+  const sortHandler = getSortHandler();
 
   function sortItems(id) {
     const sortArr = []
     switch (id) {
       case 0:
-        setModels(sortArr.concat(models.sort((a, b) => a.manufacturer > b.manufacturer ? 1 : -1)))
+        setModels(sortArr.concat(sortHandler(models)))
         break
 
       case 1:
@@ -70,7 +93,6 @@ function App() {
 
     if (langArr[langIndex + 1] !== undefined) {
       setLanguage([langArr[langIndex + 1]])
-
     } else {
       setLanguage([langArr[0]])
     }
@@ -96,7 +118,7 @@ function App() {
       language: language,
       changeLanguage: changeLanguage,
       sortItems: sortItems,
-      loading:loading
+      loading: loading
     }}>
       <React.Fragment>
         <Header />

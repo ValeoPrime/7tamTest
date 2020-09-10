@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import './banner.sass'
 import banner from '../../../img/banner.png'
 import Context from '../../context/context'
 
 export default function Banner() {
-    const {language} = useContext(Context)
+    const { language } = useContext(Context)
 
     return (
         <div className='banner-sideBar'>

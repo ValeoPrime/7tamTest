@@ -28,8 +28,8 @@ export default function MainContent() {
                 </div>
             </div>
             <ul className="mainContent__list">
-                
-                {   loading ?
+
+                {loading ?
                     <Loader /> :
                     models.map((item, i) => {
                         return (

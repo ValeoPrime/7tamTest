@@ -23,7 +23,6 @@
         bottom: 14px
         left: 47px
 
-
     .wraper__squaresInCorner
         display: flex
         justify-content: space-between
@@ -40,8 +39,8 @@
             background-color: transparent    
         .price
             color: #fff
-        .dollar
-            display: inline
+    .dollar
+        display: inline
         
 @media screen and ( max-width:1150px  )
     .mainContent__list_item
@@ -55,8 +54,9 @@
         display: none
     .mob-show
         display: block
-    .dollar 
-        display: none
+    .mainContent__list_item
+        .dollar 
+            display: none
 @media (min-width: 425px) and (max-width: 768px) 
     .price        
         font-size: calc(24px + (46 - 24) * ( (100vw - 425px) / ( 768 - 425) ));

@@ -5,12 +5,12 @@ import MainContent from '../main/mainContent/MainContent'
 import Banner from './banner/Banner'
 
 export default function Main() {
-    
+
     return (
         <div className="container">
             <Sorting />
-            <MainContent/>
-            <Banner/>
+            <MainContent />
+            <Banner />
         </div>
     )
 }
