@@ -1,0 +1,101 @@
+.mob-hidden
+    display: block
+.mob-show
+    display: none
+.mainContent__list_item
+    color: #C4C4C4;
+    margin-bottom: 13px
+    position: relative
+    &::before
+        content: ''
+        position: absolute
+        background-image: url('../../../../img/icons/star.svg')
+        width: 14px
+        height: 13px
+        bottom: 14px
+        left: 17px
+    &::after
+        content: ''
+        position: absolute
+        background-image: url('../../../../img/icons/greenArrow.svg')
+        width: 4px
+        height: 11px
+        bottom: 14px
+        left: 47px
+
+    .wraper__squaresInCorner
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 12px 12px 13px 63.5px
+        cursor: pointer
+        
+        .manufacturer
+            max-width: 43px
+            overflow: hidden
+        .profit span
+            position: relative        
+            color: #00A651;
+            background-color: transparent    
+        .price
+            color: #fff
+    .dollar
+        display: inline
+        
+@media screen and ( max-width:1150px  )
+    .mainContent__list_item
+        .manufacturer
+            margin-right: 30px
+        .algoritm, .release
+            display: none
+
+@media screen and ( max-width:768px  )
+    .mob-hidden
+        display: none
+    .mob-show
+        display: block
+    .mainContent__list_item
+        .dollar 
+            display: none
+@media (min-width: 425px) and (max-width: 768px) 
+    .price        
+        font-size: calc(24px + (46 - 24) * ( (100vw - 425px) / ( 768 - 425) ));
+    .mainContent__list_item
+        margin-bottom: calc(11px + (24 - 11) * ( (100vw - 425px) / ( 768 - 425) ))
+        background-color: #232439
+        &::before
+            content: ''
+            position: absolute
+            background-image: url('../../../../img/icons/star.svg')
+            background-repeat: no-repeat
+            background-size: cover  
+            background-position: center center  
+            width: calc(20px + (40 - 20) * ( (100vw - 425px) / ( 768 - 425) ))
+            height: calc(20px + (40 - 20) * ( (100vw - 425px) / ( 768 - 425) ))
+            bottom: calc(100% - calc(52px + (102 - 52) * ( (100vw - 425px) / ( 768 - 425) )))
+            left: calc(100% - calc(52px + (104 - 52) * ( (100vw - 425px) / ( 768 - 425) ))) 
+        &::after
+            display: none
+        .wraper__squaresInCorner
+            padding-top: calc(21px + (58 - 21) * ( (100vw - 425px) / ( 768 - 425) ));
+            padding-bottom: calc(21px + (58 - 21) * ( (100vw - 425px) / ( 768 - 425) ));
+            padding-left: calc(29px + (58 - 29) * ( (100vw - 425px) / ( 768 - 425) ))
+            padding-right: calc(29px + (58 - 29) * ( (100vw - 425px) / ( 768 - 425) ))
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: flex-start
+            cursor: pointer
+            .list_item-img
+                display: block
+                width: calc(180px + (360 - 180) * ( (100vw - 425px) / ( 768 - 425) ));
+                margin: 0 auto
+                margin-top: calc(47px + (87 - 47) * ( (100vw - 425px) / ( 768 - 425) ));
+
+            .fullName, .hash
+                font-size: calc(16px + (24 - 16) * ( (100vw - 425px) / ( 768 - 425) ));
+                line-height: calc(16px + (24 - 16) * ( (100vw - 425px) / ( 768 - 425) ));
+            .price
+                font-weight: bold;
+                line-height: 45px
+                margin-top: calc(55px + (91 - 55) * ( (100vw - 425px) / ( 768 - 425) ))
