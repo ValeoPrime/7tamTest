@@ -7,6 +7,11 @@
 .logo__wrap 
     display: flex;
     align-items: center;
+.mobile__menu, .mobile__logo
+    border: none
+    background-color: transparent
+    outline: none
+    display: none
 
 .change__lang 
     width: 91px;
@@ -51,4 +56,30 @@
         font-size: 12px;
         line-height: 20px;
         color: #FFFFFF;
+
+@media screen and ( max-width:768px  )
+    .header
+        padding: 2.9376rem 3.75rem
+    .logo__wrap
+        display: none
+    .mobile__menu, .mobile__logo
+        display: block
+@media (min-width: 425px) and (max-width: 768px) 
+    .header
+        padding-top: calc(21px + (47 - 21) * ( (100vw - 425px) / ( 768 - 425) ));
+        padding-bottom: calc(21px + (47 - 21) * ( (100vw - 425px) / ( 768 - 425) ));
+        padding-left: calc(30px + (61 - 30) * ( (100vw - 425px) / ( 768 - 425) ));
+        padding-right: calc(30px + (61 - 30) * ( (100vw - 425px) / ( 768 - 425) ));
+    .mobile__menu
+        width: calc(20px + (31 - 20) * ( (100vw - 425px) / ( 768 - 425) ));
+    .mobile__logo
+        width: calc(65px + (105 - 65) * ( (100vw - 425px) / ( 768 - 425) ));
+    .basket__wrap img
+        width: calc(24px + (39 - 24) * ( (100vw - 425px) / ( 768 - 425) ));
+    .basket__wrap 
+        .basket__count
+            top: -3px
+    .price        
+        font-size: calc(24px + (46 - 24) * ( (100vw - 425px) / ( 768 - 425) ));
+    
         

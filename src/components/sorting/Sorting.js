@@ -1,7 +1,7 @@
 import React,{ useContext} from 'react'
 import './sorting.sass'
 import SortItem from './sortItem/SortItem'
-import Context from '../context'
+import Context from '../context/context'
 
 export default function Sorting() {
     const {language} = useContext(Context) 

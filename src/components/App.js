@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import './App.sass';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import Main from './components/main/Main';
-import Context from './components/context'
+import React, { useState, useEffect } from 'react';
+import Header from './header/Header';
+import Footer from './footer/Footer';
+import Main from './main/Main';
+import Context from './context/context'
 
 function App() {
   const [basketCount, setBasketCount] = useState([])
@@ -27,23 +26,23 @@ function App() {
   const [language, setLanguage] = useState([langArr[0]])
   const [loading, setLoading] = useState(true)
 
-  if (models.length === 0) {
-      fetch('data/models.json', {
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8'
-        },
-      })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setTimeout(() => {
+  useEffect(() => {
+    fetch('data/models.json', {
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      setTimeout(() => {
 
-          setModels(data)
-          setLoading(false)
-        }, 3000);
-      });
-  }
+        setModels(data)
+        setLoading(false)
+      }, 3000);
+    });
+  }, [])
 
 
   function sortItems(id) {

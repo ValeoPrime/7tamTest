@@ -27,12 +27,8 @@
         font-size: 12px;
         line-height: 15px;
         height: 30px
-        @media screen and ( max-width:1150px  )
-            justify-content: space-between
+        
             
-    .release
-        @media screen and ( max-width:1150px  )
-            display: none
     .manufacturer
         margin-left: 10px
     .model
@@ -52,6 +48,8 @@
     .mainContent__topLine
         .wraper__squaresInCorner
             padding-right: 50px
+            @media screen and ( max-width:1150px  )
+                justify-content: space-between
         .release, .algorithm
             display: none
         .manufacturer, .model, .hash, .efficiency, .profit, .price
@@ -60,4 +58,14 @@
             margin-right: 30px
         .profit 
             margin-right: 50px
-        
+
+@media screen and ( max-width:1023px  )
+    .mainContent
+        margin-left: 1.25rem
+@media screen and ( max-width:768px  )
+    .mainContent
+        margin-left: 0
+    .mainContent__title, .mainContent__topLine
+        display: none
+
+    

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import "./mainContent.sass"
 import MainContentListItem from './mainContentItem/MainContentListItem'
-import Context from '../../context'
+import Context from '../../context/context'
 import Loader from '../loader/Loader'
 
 
